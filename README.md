@@ -7,7 +7,7 @@
    - VScode 
    - Flutter SDK
 
-# Guide to get started with flutter installation on your PC :
+# Guide to get started with flutter installation on your PC 
 - [Official Guides](https://docs.flutter.dev/get-started/install)
 - Video Tutorials: 
   - [Hindi](https://www.youtube.com/watch?v=BqHOtlh3Dd4)
