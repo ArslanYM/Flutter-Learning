@@ -12,4 +12,6 @@
 - String 
 - Type Conversion
 - Constants and null
+- Operators
+- 
 
