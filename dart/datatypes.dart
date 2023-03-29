@@ -34,6 +34,7 @@ void main() {
   print("weak variable initially = $weakVariable");
   weakVariable = "i changed its value from integer to string";
   print("weak variable now = $weakVariable");
+  
 
 
 }
