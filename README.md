@@ -4,9 +4,9 @@
 
 ## Getting Started with flutter. 
 - To be able to work with flutter and dart on your device , there are some prerequesites. 
-   - Android Studio
-   - VScode 
-   - Flutter SDK
+   - [Android Studio](https://developer.android.com/studio)
+   - [VScode](https://code.visualstudio.com/Download) 
+   - [Flutter SDK](https://docs.flutter.dev/get-started/install)
 
 ## Guide to get started with flutter installation on your PC 
 - [Official Guides](https://docs.flutter.dev/get-started/install)
