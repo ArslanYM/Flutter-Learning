@@ -13,5 +13,8 @@
 - Type Conversion
 - Constants and null
 - Operators
-- 
-
+- nullaware
+- ternary operator
+- typecheck 
+- loops 
+- Collection
