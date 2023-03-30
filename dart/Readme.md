@@ -18,3 +18,15 @@
 - typecheck 
 - loops 
 - Collection
+ - List 
+ - Set 
+ - Map
+- Functions 
+ - arrow 
+ - anonymus 
+- Classes
+ - Inheritance
+ - Super
+ - child
+- Overriding
+- Exception Handling
