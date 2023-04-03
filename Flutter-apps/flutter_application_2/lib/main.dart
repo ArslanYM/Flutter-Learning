@@ -16,7 +16,24 @@ class MyApp extends StatelessWidget {
               CircleAvatar(
                 radius: 50.0,
                 backgroundImage: NetworkImage(
-                    "https://media.licdn.com/dms/image/C4D03AQHQ8oDwQdzBWA/profile-displayphoto-shrink_800_800/0/1655544310526?e=1686182400&v=beta&t=lzs-xiIez_pp0DDAChrb-c85efQOZxYcTFYVz1cEZS4" ),
+                    "https://media.licdn.com/dms/image/C4D03AQHQ8oDwQdzBWA/profile-displayphoto-shrink_800_800/0/1655544310526?e=1686182400&v=beta&t=lzs-xiIez_pp0DDAChrb-c85efQOZxYcTFYVz1cEZS4"),
+              ),
+              Text(
+                'Arsalan Malik',
+                style: TextStyle(
+                    fontFamily: 'Pacifico',
+                    fontSize: 40,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'ASPIRING DEVELOPER',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'Source Sans Pro',
+                  letterSpacing: 3,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),
