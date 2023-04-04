@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
                 radius: 50.0,
@@ -35,48 +36,47 @@ class MyApp extends StatelessWidget {
                   color: Colors.teal.shade100,
                 ),
               ),
-              Container(
-                color: Colors.white,
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.phone,
-                      color: Colors.teal,
-                    ),
-                    SizedBox(width: 10.0),
-                    Text(
-                      '+91-9149689995',
-                      style: TextStyle(
-                        fontFamily: "Source Sans Pro",
-                        color: Colors.teal.shade900,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
+              SizedBox(
+                height: 15,
+                width: 150,
+                child: Divider(
+                  color: Colors.teal.shade100,
                 ),
               ),
-              Container(
+              Card(
                 color: Colors.white,
-                padding: EdgeInsets.all(10),
                 margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.email,
-                      color: Colors.teal,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    "(+91) 9149689995",
+                    style: TextStyle(
+                      fontFamily: 'Source Sans Pro',
+                      color: Colors.teal.shade900,
+                      fontSize: 20,
                     ),
-                    SizedBox(width: 10.0),
-                    Text(
-                      'arsalanyaqmalik@gmail.com',
-                      style: TextStyle(
-                        fontFamily: "Source Sans Pro",
-                        color: Colors.teal.shade900,
-                        fontSize: 20,
-                      ),
+                  ),
+                ),
+              ),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'arsalanyaqmalik@gmail.com',
+                    style: TextStyle(
+                      fontFamily: "Source Sans Pro",
+                      color: Colors.teal.shade900,
+                      fontSize: 20,
                     ),
-                  ],
+                  ),
                 ),
               ),
             ],
