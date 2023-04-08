@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quizbrain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 Quizbrain quizBrain = Quizbrain();
 void main() => runApp(Quizzler());
@@ -27,8 +28,41 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  int qNumber = 0;
   List<Icon> scoreKeeper = [];
+
+  void checkAnswer(bool useChosenAnswer) {
+    bool correctAnswer = quizBrain.getQuestionAnswer();
+    setState(() {
+      if (quizBrain.isFinished()) {
+        Alert(
+                context: context,
+                title: "Game Has Ended ",
+                desc: "Well Played!",
+                style: AlertStyle(overlayColor: Colors.black))
+            .show();
+        quizBrain.reset();
+        scoreKeeper.clear();
+      } else {
+        if (useChosenAnswer == correctAnswer) {
+          scoreKeeper.add(
+            Icon(
+              Icons.check,
+              color: Colors.green,
+            ),
+          );
+        } else {
+          scoreKeeper.add(
+            Icon(
+              Icons.close,
+              color: Colors.red,
+            ),
+          );
+        }
+        quizBrain.nextQuestion();
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,7 +75,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizBrain.questionBank[qNumber].questionText,
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -69,16 +103,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer =
-                    quizBrain.questionBank[qNumber].questionAnswer;
-                if (correctAnswer == true) {
-                  print("correct ans");
-                } else {
-                  print("wrong ans");
-                }
-                setState(() {
-                  qNumber++;
-                });
+                checkAnswer(true);
               },
             ),
           ),
@@ -101,16 +126,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer =
-                    quizBrain.questionBank[qNumber].questionAnswer;
-                if (correctAnswer == false) {
-                  print("correct ans");
-                } else {
-                  print("wrong ans");
-                }
-                setState(() {
-                  qNumber++;
-                });
+                checkAnswer(false);
               },
             ),
           ),
