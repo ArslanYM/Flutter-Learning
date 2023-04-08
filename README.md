@@ -22,7 +22,5 @@
 - Video Tutorials:
   - [Hindi](https://www.youtube.com/watch?v=BqHOtlh3Dd4)
   - [Englsh](https://youtu.be/fDnqXmLSqtg)
-
-## Fixing Flutter Doctor Errors
-
-- [Tutorial](https://youtu.be/a8bzTTu_eMU)
+  -  Fixing Flutter Doctor Errors: 
+     -[Tutorial](https://youtu.be/a8bzTTu_eMU)
