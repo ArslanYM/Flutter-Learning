@@ -2,8 +2,8 @@
 
 - Sharing all the documentation and tutorials I'm going through to Learn Flutter.
 - This repositary tracks my journey of learning dart for 30 days.
-- The [dart]() folder contains the basics of Dart language that I learnt to get started with Flutter
-- The [flutterApps]() folder contains all the apps I built.
+- The [dart](https://github.com/ArslanYM/Flutter-Learning/tree/main/dart) folder contains the basics of Dart language that I learnt to get started with Flutter
+- The [flutterApps](https://github.com/ArslanYM/Flutter-Learning/tree/main/Flutter-apps) folder contains all the apps I built.
 
 ## Roadmap I Followed for learning Flutter
 
