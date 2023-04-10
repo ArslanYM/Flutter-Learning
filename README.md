@@ -24,3 +24,11 @@
   - [Englsh](https://youtu.be/fDnqXmLSqtg)
   -  Fixing Flutter Doctor Errors: 
      -[Tutorial](https://youtu.be/a8bzTTu_eMU)
+     
+## Apps I built while learning Flutter 
+- BMI Calculator
+- Destiny Game
+- Magic Ball
+- Quiz App
+- Xylophone Player
+- MI Card
