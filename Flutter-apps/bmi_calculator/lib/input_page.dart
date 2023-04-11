@@ -1,7 +1,13 @@
+import 'dart:ui';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'home_page_element.dart';
+import 'icon_content.dart';
+import 'constants.dart';
 
-final Color activeCardColor = Colors.grey.shade800;
+enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
   @override
@@ -9,34 +15,51 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Gender selectedGender;
+  int height = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.black38,
         centerTitle: true,
-        title: Text('BMI CALCULATOR'),
+        title: Text('BMI Calculator'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
               children: [
                 Expanded(
                   child: HomePageElement(
-                    colour: activeCardColor,
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
+                    colour: selectedGender == Gender.male
+                        ? activeCardColor
+                        : inactiveCardColor,
                     cardChild: IconContent(
                       symbol: FontAwesomeIcons.mars,
-                      label: "Male",
+                      label: "MALE",
                     ),
                   ),
                 ),
                 Expanded(
                   child: HomePageElement(
-                    colour: activeCardColor,
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    colour: selectedGender == Gender.female
+                        ? activeCardColor
+                        : inactiveCardColor,
                     cardChild: IconContent(
                       symbol: FontAwesomeIcons.venus,
-                      label: "Female",
+                      label: "FEMALE",
                     ),
                   ),
                 ),
@@ -45,7 +68,45 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: HomePageElement(
-              colour: activeCardColor,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "HEIGHT",
+                    style:
+                        TextStyle(fontSize: 15.0, color: Colors.grey.shade200),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        height.toString(),
+                        style: bigText,
+                      ),
+                      Text(
+                        'cm',
+                        style: TextStyle(
+                            fontSize: 15.0, color: Colors.grey.shade200),
+                      ),
+                    ],
+                  ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: 0,
+                    max: 300,
+                    activeColor: Colors.white,
+                    inactiveColor: Colors.grey,
+                    onChanged: (double newValue) {
+                      setState(() {
+                        height = newValue.round();
+                      });
+                    },
+                  )
+                ],
+              ),
+              colour: inactiveCardColor,
             ),
           ),
           Expanded(
@@ -53,66 +114,23 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: HomePageElement(
-                    colour: activeCardColor,
+                    colour: inactiveCardColor,
                   ),
                 ),
                 Expanded(
                   child: HomePageElement(
-                    colour: activeCardColor,
+                    colour: inactiveCardColor,
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            color: Colors.red,
+            color: Colors.black54,
             height: 80.0,
             width: double.infinity,
           ),
         ],
-      ),
-    );
-  }
-}
-
-class IconContent extends StatelessWidget {
-  IconContent({@required this.symbol, this.label});
-  @override
-  final IconData symbol;
-  final String label;
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          symbol,
-          size: 80.0,
-          color: Colors.grey.shade200,
-        ),
-        SizedBox(
-          height: 15,
-        ),
-        Text(
-          label,
-          style: TextStyle(fontSize: 15.0, color: Colors.grey.shade200),
-        ),
-      ],
-    );
-  }
-}
-
-class HomePageElement extends StatelessWidget {
-  HomePageElement({@required this.colour, this.cardChild});
-  final cardChild;
-  final Color colour;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: colour,
-        borderRadius: BorderRadius.circular(10),
       ),
     );
   }
