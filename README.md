@@ -26,10 +26,17 @@
      -[Tutorial](https://youtu.be/a8bzTTu_eMU)
      
 ## Apps I built while learning Flutter 
-- BMI Calculator
-- Destiny Game
-- Magic Ball
-- Quiz App
-- Xylophone Player
-- MI Card
-- Weather App 
+### BMI Calculator
+ - ![img](https://cdn.dribbble.com/users/1553101/screenshots/4585382/dribbble_post.png)
+### Destiny Game
+ - ![Finished App](https://github.com/londonappbrewery/Images/blob/master/Destini.gif)
+### Magic Ball
+### Quiz App
+- ![Finished App](https://github.com/londonappbrewery/Images/blob/master/quizzler-demo.gif)
+### Xylophone Player
+### MI Card
+- ![completed](https://user-images.githubusercontent.com/104521101/229839344-f884108c-f50e-49c4-b38e-faabfd2aa31c.png)
+### Weather App 
+ - ![Finished App](https://github.com/londonappbrewery/Images/blob/master/clima-demo.gif)
+### Dice Game 
+ - ![app](https://user-images.githubusercontent.com/104521101/229861798-f427059f-8a8a-4c29-b54a-25947cc35a69.png)
