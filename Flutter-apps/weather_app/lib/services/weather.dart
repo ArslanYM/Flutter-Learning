@@ -31,3 +31,9 @@ class WeatherModel {
     }
   }
 }
+
+
+
+// var temperature = jsonDecode(data)['main']['temp'];
+//       var cNumber = jsonDecode(data)["weather"][0]['id'];
+//       var city = jsonDecode(data)['name'];
