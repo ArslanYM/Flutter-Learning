@@ -3,8 +3,16 @@ import 'package:to_do_list/constants/colors.dart';
 import '../model/to_do.dart';
 
 class ToDoItem extends StatelessWidget {
-  const ToDoItem({super.key, required this.todo});
+  const ToDoItem({
+    super.key,
+    required this.todo,
+    required this.onToDoChanged,
+    required this.onDelete,
+  });
   final ToDo todo;
+  final onToDoChanged;
+  final onDelete;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +26,9 @@ class ToDoItem extends StatelessWidget {
           color: tdBlue,
           size: 25,
         ),
-        // onTap: () {},
+        onTap: () {
+          onToDoChanged(todo);
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -38,7 +48,7 @@ class ToDoItem extends StatelessWidget {
           child: IconButton(
             iconSize: 20,
             onPressed: () {
-              print('Delete button was pressed');
+              onDelete(todo.id);
             },
             icon: Icon(
               Icons.delete,
