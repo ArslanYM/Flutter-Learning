@@ -26,17 +26,18 @@
      -[Tutorial](https://youtu.be/a8bzTTu_eMU)
      
 ## Apps I built while learning Flutter 
+
 ### BMI Calculator
  - ![img](https://cdn.dribbble.com/users/1553101/screenshots/4585382/dribbble_post.png)
 ### Destiny Game
  - ![Finished App](https://github.com/londonappbrewery/Images/blob/master/Destini.gif)
-### Magic Ball
 ### Quiz App
-- ![Finished App](https://github.com/londonappbrewery/Images/blob/master/quizzler-demo.gif)
-### Xylophone Player
+ - ![Finished App](https://github.com/londonappbrewery/Images/blob/master/quizzler-demo.gif)
 ### MI Card
-- ![completed](https://user-images.githubusercontent.com/104521101/229839344-f884108c-f50e-49c4-b38e-faabfd2aa31c.png)
+ - ![completed](https://user-images.githubusercontent.com/104521101/229839344-f884108c-f50e-49c4-b38e-faabfd2aa31c.png)
 ### Weather App 
  - ![Finished App](https://github.com/londonappbrewery/Images/blob/master/clima-demo.gif)
 ### Dice Game 
  - ![app](https://user-images.githubusercontent.com/104521101/229861798-f427059f-8a8a-4c29-b54a-25947cc35a69.png)
+### To Do List App
+ - ![cover](https://user-images.githubusercontent.com/104521101/234003413-f0b9a3d0-b3ac-464f-bf4b-ad143723bcda.png)
