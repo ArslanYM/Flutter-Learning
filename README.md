@@ -26,7 +26,8 @@
      -[Tutorial](https://youtu.be/a8bzTTu_eMU)
      
 ## Apps I built while learning Flutter 
-
+### Calculator App 
+ - ![1](https://user-images.githubusercontent.com/104521101/234316959-0c91ee79-fa98-40ad-8072-e77b54ab6f13.png)
 ### BMI Calculator
  - ![img](https://cdn.dribbble.com/users/1553101/screenshots/4585382/dribbble_post.png)
 ### Destiny Game
