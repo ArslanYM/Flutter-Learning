@@ -1,5 +1,5 @@
 # Flutter-Learning
-
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 - Sharing all the documentation and tutorials I'm going through to Learn Flutter.
 - This repositary tracks my journey of learning dart for 30 days.
 - The [dart](https://github.com/ArslanYM/Flutter-Learning/tree/main/dart) folder contains the basics of Dart language that I learnt to get started with Flutter
