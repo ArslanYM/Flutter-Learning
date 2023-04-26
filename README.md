@@ -26,6 +26,8 @@
      -[Tutorial](https://youtu.be/a8bzTTu_eMU)
      
 ## Apps I built while learning Flutter 
+### Coffee UI App 
+- ![completed](https://user-images.githubusercontent.com/104521101/234616606-aff804aa-4d48-483b-9ae1-c01c6fc5d2ab.png)
 ### Calculator App 
  - ![1](https://user-images.githubusercontent.com/104521101/234316959-0c91ee79-fa98-40ad-8072-e77b54ab6f13.png)
 ### BMI Calculator
