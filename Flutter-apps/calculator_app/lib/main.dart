@@ -84,63 +84,66 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             flex: 2,
-            child: Container(
-              child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4),
-                itemBuilder: (BuildContext context, int index) {
-                  if (index == 0) {
-                    return MyButton(
-                      buttonTapped: () {
-                        setState(() {
-                          userQuestion = '';
-                        });
-                      },
-                      iconText: buttons[index],
-                      color: Colors.green,
-                      textColor: Colors.white,
-                    );
-                  } else if (index == 1) {
-                    return MyButton(
-                      buttonTapped: () {
-                        setState(() {
-                          userQuestion = userQuestion.substring(
-                              0, userQuestion.length - 1);
-                        });
-                      },
-                      iconText: buttons[index],
-                      color: Colors.red,
-                      textColor: Colors.white,
-                    );
-                  } else if (index == buttons.length - 1) {
-                    return MyButton(
-                      buttonTapped: () {
-                        setState(() {
-                          getAnswer();
-                        });
-                      },
-                      iconText: buttons[index],
-                      color: Colors.deepPurple,
-                      textColor: Colors.white,
-                    );
-                  } else {
-                    return MyButton(
-                      buttonTapped: () {
-                        setState(() {
-                          userQuestion += buttons[index];
-                        });
-                      },
-                      iconText: buttons[index],
-                      color: isOperator(buttons[index])
-                          ? Colors.deepPurple
-                          : Colors.deepPurple[50],
-                      textColor: isOperator(buttons[index])
-                          ? Colors.white
-                          : Colors.deepPurple,
-                    );
-                  }
-                },
+            child: GridView.builder(
+              itemCount: buttons.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
               ),
+              itemBuilder: (BuildContext context, int index) {
+                //clear button
+                if (index == 0) {
+                  return MyButton(
+                    buttonTapped: () {
+                      setState(() {
+                        userQuestion = '';
+                        userAnswer = '';
+                      });
+                    },
+                    iconText: buttons[index],
+                    color: Colors.green,
+                    textColor: Colors.white,
+                  );
+                } else if (index == 1) {
+                  //delete button
+                  return MyButton(
+                    buttonTapped: () {
+                      setState(() {
+                        userQuestion =
+                            userQuestion.substring(0, userQuestion.length - 1);
+                      });
+                    },
+                    iconText: buttons[index],
+                    color: Colors.red,
+                    textColor: Colors.white,
+                  );
+                } else if (index == buttons.length - 1) {
+                  return MyButton(
+                    buttonTapped: () {
+                      setState(() {
+                        getAnswer();
+                      });
+                    },
+                    iconText: buttons[index],
+                    color: Colors.deepPurple,
+                    textColor: Colors.white,
+                  );
+                } else {
+                  return MyButton(
+                    buttonTapped: () {
+                      setState(() {
+                        userQuestion += buttons[index];
+                      });
+                    },
+                    iconText: buttons[index],
+                    color: isOperator(buttons[index])
+                        ? Colors.deepPurple
+                        : Colors.deepPurple[50],
+                    textColor: isOperator(buttons[index])
+                        ? Colors.white
+                        : Colors.deepPurple,
+                  );
+                }
+              },
             ),
           ),
         ],
