@@ -1,5 +1,5 @@
+//2. Import the required packages.
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 
 const List<String> currenciesList = [
@@ -32,23 +32,22 @@ const List<String> cryptoList = [
   'LTC',
 ];
 
-const apiKey = '7613BBC8-A677-4872-AB46-1A2A998AE9FD';
+const coinAPIURL = 'https://rest.coinapi.io/v1/exchangerate';
+const apiKey = 'YOUR-API-KEY-HERE';
 
 class CoinData {
-  CoinData({this.currency});
-  final currency;
+  //TODO 3: Update getCoinData to take the selectedCurrency as an input.
   Future getCoinData() async {
-    String requestURL =
-        'https://rest.coinapi.io/v1/exchangerate/BTC/$currency?apikey=$apiKey';
-    Uri coinAPIURI = Uri.parse(requestURL);
-    http.Response response = await http.get(coinAPIURI);
+    //TODO 4: Update the URL to use the selectedCurrency input.
+    String requestURL = '$coinAPIURL/BTC/USD?apikey=$apiKey';
+    http.Response response = await http.get(requestURL);
     if (response.statusCode == 200) {
       var decodedData = jsonDecode(response.body);
       var lastPrice = decodedData['rate'];
       return lastPrice;
     } else {
-      print('Error while fetching');
-      throw 'Problem';
+      print(response.statusCode);
+      throw 'Problem with the get request';
     }
   }
 }

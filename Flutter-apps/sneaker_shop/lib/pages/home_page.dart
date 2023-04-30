@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop/pages/shop.dart';
-import 'package:sneaker_shop/pages/util/bottom_g_nav.dart';
+import 'package:sneaker_shop/util/bottom_g_nav.dart';
 import 'cart.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  void naviageBottomBar(int index) {
+  void navigateBottomBar(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       bottomNavigationBar: BottomGNav(
-        onTabChange: (index) => naviageBottomBar(index),
+        onTabChange: (index) => navigateBottomBar(index),
       ),
       body: _pages[_selectedIndex],
       appBar: AppBar(
