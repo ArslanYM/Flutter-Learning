@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class IntroScreen1 extends StatelessWidget {
   const IntroScreen1({super.key});
@@ -7,9 +8,9 @@ class IntroScreen1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text('Page 1'),
+        child: Lottie.asset('lib/lotties/finding_data.json'),
       ),
-      color: Colors.pink[100],
+      color: Colors.blue[500],
     );
   }
 }

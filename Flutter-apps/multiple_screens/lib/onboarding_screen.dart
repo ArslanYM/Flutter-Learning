@@ -43,7 +43,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   onTap: () {
                     _controller.jumpToPage(2);
                   },
-                  child: Text('skip'),
+                  child: Text('skip',
+                      style: TextStyle(color: Colors.white, fontSize: 14)),
                 ),
                 SmoothPageIndicator(
                   controller: _controller,
@@ -51,23 +52,29 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   count: 3,
                 ),
                 isLast
-                    ? GestureDetector(
+                    ? InkWell(
+                        splashColor: Colors.deepPurple,
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
                             return HomePage();
                           }));
                         },
-                        child: Text('done'),
+                        child: Text(
+                          'done',
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
                       )
-                    : GestureDetector(
+                    : InkWell(
                         onTap: () {
                           _controller.nextPage(
                               duration: Duration(milliseconds: 500),
                               curve: Curves.ease);
                         },
-                        child: Text('next'),
-                      )
+                        child: Text(
+                          'next',
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ))
               ],
             ),
           )
