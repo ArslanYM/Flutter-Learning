@@ -28,13 +28,15 @@
 ## Apps I built while learning Flutter 
 ### Sneaker Shop
 - ![s](https://user-images.githubusercontent.com/104521101/235477153-06e78ff3-039c-4d73-a1af-586685770489.png)
-
 ### Neumorphic Music App UI
 - ![Screenshot 2023-05-01 190817](https://user-images.githubusercontent.com/104521101/235459411-90e804de-9d8c-41fa-9590-c7965f2f0cd6.png)
 ### Coffee UI App 
 - ![completed](https://user-images.githubusercontent.com/104521101/234616606-aff804aa-4d48-483b-9ae1-c01c6fc5d2ab.png)
 ### Calculator App 
  - ![1](https://user-images.githubusercontent.com/104521101/234316959-0c91ee79-fa98-40ad-8072-e77b54ab6f13.png)
+### Intro Screens
+- ![final](https://user-images.githubusercontent.com/104521101/235958369-65d64a4f-65d2-469a-9f97-da207aa2d97e.gif)
+
 ### BMI Calculator
  - ![img](https://cdn.dribbble.com/users/1553101/screenshots/4585382/dribbble_post.png)
 ### Destiny Game
