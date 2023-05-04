@@ -47,6 +47,7 @@ class UserHome extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: 130,
