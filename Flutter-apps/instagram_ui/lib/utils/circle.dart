@@ -13,7 +13,7 @@ class Circle extends StatelessWidget {
             height: 60,
             width: 60,
             decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Colors.grey[600]),
+                BoxDecoration(shape: BoxShape.circle, color: Colors.grey[500]),
           ),
         ),
         SizedBox(

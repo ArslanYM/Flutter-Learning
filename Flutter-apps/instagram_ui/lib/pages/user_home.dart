@@ -8,9 +8,9 @@ class UserHome extends StatelessWidget {
     'Story1',
     'Story2',
     'Story3',
-    'Story3',
-    'Story3',
-    'Story3',
+    'Story4',
+    'Story5',
+    'Story6',
   ];
   List people = [
     'andrew22',
