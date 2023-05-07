@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "566369769532",
-    "project_id": "loginapp-253fe",
-    "storage_bucket": "loginapp-253fe.appspot.com"
+    "project_number": "984487112557",
+    "project_id": "crud-app-f199b",
+    "storage_bucket": "crud-app-f199b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:566369769532:android:10c0ca76ced9431f854b39",
+        "mobilesdk_app_id": "1:984487112557:android:fdd6b96eecf5d5fddf7464",
         "android_client_info": {
           "package_name": "com.example.login_app_firebse"
         }
       },
       "oauth_client": [
         {
-          "client_id": "566369769532-4jujjps7j6qjudksrbaupad3qvd1je6i.apps.googleusercontent.com",
+          "client_id": "984487112557-vrorbt7fv5del0e24b50ut7hd9k7m9gn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBVYdMVPsjtjyV04V2VooS7sX9LZar-ybk"
+          "current_key": "AIzaSyDpH8lkFMArBoD8g_LwNL33LgbPlfv3rcI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "566369769532-4jujjps7j6qjudksrbaupad3qvd1je6i.apps.googleusercontent.com",
+              "client_id": "984487112557-vrorbt7fv5del0e24b50ut7hd9k7m9gn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
