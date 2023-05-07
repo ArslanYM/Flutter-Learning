@@ -1,31 +1,37 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  final VoidCallback showLoginPage;
+  const RegisterPage({super.key, required this.showLoginPage});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
-  Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _emailController.text.trim(),
-      password: _passwordController.text.trim(),
-    );
+  Future signUp() async {
+    if (passwordMatches()) {
+      FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+      );
+    }
   }
 
-  // @override
-  // void dispose() {
-  //   _emailController.dispose();
-  //   _passwordController.dispose();
-  //   super.dispose();
-  // }
+  bool passwordMatches() {
+    if (_passwordController.text.trim() ==
+        _confirmPasswordController.text.trim()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,14 +55,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 //text hello again
                 Text(
-                  'Hello Again!',
+                  'Hello there!',
                   style: GoogleFonts.bebasNeue(fontSize: 52),
                   // style: ),
                 ),
                 const SizedBox(height: 10),
                 //"welcome back youve been missed!"
                 const Text(
-                  'Welcome back,  you\'ve been missed',
+                  'Register below with your details',
                   style: TextStyle(fontSize: 16),
                 ),
 
@@ -105,13 +111,35 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.grey[100],
+                        border: Border.all(color: Colors.deepPurple)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: TextField(
+                        controller: _confirmPasswordController,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          hintStyle: TextStyle(color: Colors.grey[500]),
+                          hintText: 'Confirm Password',
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 const SizedBox(
                   height: 10,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: InkWell(
-                    onTap: signIn,
+                    onTap: signUp,
                     child: Container(
                       padding: EdgeInsets.all(20),
                       decoration: BoxDecoration(
@@ -119,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.deepPurple),
                       child: const Center(
                           child: Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -135,13 +163,16 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Not a member?',
+                      'Already a member?',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Text(
-                      ' Register Now',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: widget.showLoginPage,
+                      child: Text(
+                        ' Login ',
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
                     )
                   ],
                 ),
