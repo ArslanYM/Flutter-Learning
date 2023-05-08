@@ -51,7 +51,7 @@ class _RegisterPageState extends State<RegisterPage> {
   // adding usd
   Future addUserDetails(
       String firstName, String lastName, String email, int age) async {
-    await FirebaseFirestore.instance.collection('user').add({
+     await FirebaseFirestore.instance.collection('users').add({
       'first name': firstName,
       'last name ': lastName,
       'email': email,
@@ -72,7 +72,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.grey[200],
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
