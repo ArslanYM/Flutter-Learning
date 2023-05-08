@@ -16,7 +16,11 @@ class _HomePageState extends State<HomePage> {
   List<String> docIDs = [];
 
   Future getDocId() async {
-    await FirebaseFirestore.instance.collection('users').get().then(
+    await FirebaseFirestore.instance
+        .collection('users')
+        .orderBy('age', descending: false)
+        .get()
+        .then(
           (snapshot) => snapshot.docs.forEach(
             (document) {
               docIDs.add(document.reference.id);
@@ -57,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: ListTile(
-                              tileColor: Colors.grey[300],
+                              tileColor: Colors.grey[200],
                               title: GetUserName(documentId: docIDs[index]),
                             ),
                           );
