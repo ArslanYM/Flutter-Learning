@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:workout_planner/models/workout_data.dart';
 import 'package:workout_planner/pages/home_page.dart';
 
 void main() {
@@ -10,9 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      
-      home: HomePage(),
+    return ChangeNotifierProvider(
+      create: (context) => WorkoutData(),
+      child: MaterialApp(
+        theme: ThemeData(brightness: Brightness.dark),
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+      ),
     );
   }
 }
