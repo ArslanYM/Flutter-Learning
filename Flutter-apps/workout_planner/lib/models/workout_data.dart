@@ -7,11 +7,14 @@ class WorkoutData extends ChangeNotifier {
   List<Workout> workoutList = [
     Workout(name: "Pull", exercises: [
       Exercise(
-          exerciseName: "bicep curls", weight: "15 kgs", reps: "12", sets: "4"),
+          exerciseName: "bicep curls", weight: "15", reps: "12", sets: "4"),
     ]),
     Workout(name: "push", exercises: [
       Exercise(
-          exerciseName: "bicep curls", weight: "15 kgs", reps: "12", sets: "4"),
+          exerciseName: "tricep skull crushers",
+          weight: "15",
+          reps: "12",
+          sets: "4"),
     ]),
   ];
 

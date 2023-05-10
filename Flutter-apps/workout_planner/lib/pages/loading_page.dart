@@ -38,7 +38,7 @@ class LoadingPage extends StatelessWidget {
               ),
               BoxShadow(
                 color: Colors.grey.shade800,
-                offset: Offset(-5, -5),
+                offset: Offset(-5.0, -5.0),
                 blurRadius: 15,
                 spreadRadius: 1,
               ),

@@ -78,12 +78,18 @@ class _HomePageState extends State<HomePage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return WorkoutPage();
+                                return WorkoutPage(
+                                  workoutName:
+                                      value.getWorkoutList()[index].name,
+                                );
                               },
                             ),
                           );
                         },
-                        icon: Icon(Icons.forward)),
+                        icon: Icon(
+                          Icons.navigate_next_outlined,
+                          size: 40,
+                        )),
                   ),
                 ),
               )),
