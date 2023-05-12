@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
-import 'package:workout_planner/models/workout_data.dart';
+import 'package:workout_planner/data/workout_data.dart';
 import 'package:workout_planner/pages/home_page.dart';
 import 'package:workout_planner/pages/loading_page.dart';
+import 'package:hive/hive.dart';
 
-void main() {
+void main() async {
+  //initialising hive
+  await Hive.initFlutter();
+  //create hive box (local database)
+  await Hive.openBox("workout-database");
   runApp(const MyApp());
 }
 

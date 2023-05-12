@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:workout_planner/models/workout_data.dart';
+import 'package:workout_planner/data/workout_data.dart';
 import 'package:workout_planner/pages/workout_page.dart';
 
 class HomePage extends StatefulWidget {
