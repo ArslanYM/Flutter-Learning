@@ -17,7 +17,7 @@ String todaysDateYYYYMMDD() {
 
 //converts string yymmdd to datetimeobject
 
-DateTime createdateTimeObject(String yyyymmdd) {
+DateTime createDateTimeObject(String yyyymmdd) {
   //takes the string and converts to int
   var year = int.parse(yyyymmdd.substring(0, 4));
   var month = int.parse(yyyymmdd.substring(4, 6));

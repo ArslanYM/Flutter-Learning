@@ -4,7 +4,7 @@ import 'package:workout_planner/models/exercise.dart';
 import 'package:workout_planner/models/workout.dart';
 
 class HiveDatase {
-  final _myBox = Hive.box('workout-database');
+  final _myBox = Hive.box('workout-database1');
   bool previousDataExists() {
     if (_myBox.isEmpty) {
       print('prev data doesnt exist');
@@ -33,9 +33,34 @@ class HiveDatase {
     _myBox.put("WORKOUTS", workoutList);
     _myBox.put("EXERCISES", exerciseList);
   }
-  
-  
 
+  List<Workout> readFromDatabase() {
+    List<Workout> mySavedWorkouts = [];
+    //get saved workouts
+    List<String> workoutNames = _myBox.get('WORKOUTS');
+    final exerciseDetails = _myBox.get('EXERCISES');
+    //creating workout objects from saved lists
+    for (int i = 0; i < workoutNames.length; i++) {
+      //for each workout there are multiple exercises
+      List<Exercise> exercisesInEachWorkout = [];
+      for (int j = 0; j < exerciseDetails[i].length; j++) {
+        exercisesInEachWorkout.add(
+          Exercise(
+            exerciseName: exerciseDetails[i][j][0],
+            weight: exerciseDetails[i][j][1],
+            reps: exerciseDetails[i][j][2],
+            sets: exerciseDetails[i][j][3],
+            isCompleted: exerciseDetails[i][j][4] == "true" ? true : false,
+          ),
+        );
+      }
+      //create individual workout
+      Workout workout =
+          Workout(exercises: exercisesInEachWorkout, name: workoutNames[i]);
+      mySavedWorkouts.add(workout);
+    }
+    return mySavedWorkouts;
+  }
 
   bool exerciseCompleted(List<Workout> workouts) {
     for (var workout in workouts) {
@@ -46,6 +71,11 @@ class HiveDatase {
       }
     }
     return false;
+  }
+
+  int getCompletionStatus(String yyyymmdd) {
+    int completionStatus = _myBox.get("COMPLETION_STATUS_$yyyymmdd") ?? 0;
+    return completionStatus;
   }
 }
 
@@ -58,8 +88,7 @@ List convertObjectToWorkoutList(List<Workout> workouts) {
   return workoutList;
 }
 
-//convert the exercised in  a workout object to a list of strings
-
+//convert the exercises in  a workout object to a list of strings
 List<List<List<String>>> convertObjectToExerciseList(List<Workout> workouts) {
   //List of workouts[List of Exercises[ Exercises[biceps,reps,sets,etc],[]],[]]
   List<List<List<String>>> exerciseList = [];
