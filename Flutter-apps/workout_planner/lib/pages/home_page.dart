@@ -24,16 +24,23 @@ class _HomePageState extends State<HomePage> {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
+              backgroundColor: Colors.grey[900],
               title: Text('Add new workout'),
               content: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Workout Name',
+                  border: OutlineInputBorder(),
+                ),
                 controller: _workoutNameController,
               ),
               actions: [
                 MaterialButton(
+                  color: Colors.black54,
                   onPressed: save,
                   child: Text('Save'),
                 ),
                 MaterialButton(
+                  color: Colors.black54,
                   onPressed: cancel,
                   child: Text('cancel'),
                 )
@@ -61,13 +68,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Consumer<WorkoutData>(
       builder: (context, value, child) => Scaffold(
+        backgroundColor: Colors.grey[300],
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.black,
           onPressed: createNewWorkout,
-          child: Icon(Icons.add),
-        ),
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("Workout planner"),
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
         ),
         body: ListView(
           children: [
@@ -79,30 +87,41 @@ class _HomePageState extends State<HomePage> {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: value.getWorkoutList().length,
-              itemBuilder: ((context, index) => Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Colors.deepPurple[300]),
-                    child: ListTile(
-                      title: Text(value.getWorkoutList()[index].name),
-                      trailing: IconButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return WorkoutPage(
-                                    workoutName:
-                                        value.getWorkoutList()[index].name,
-                                  );
-                                },
-                              ),
-                            );
-                          },
-                          icon: const Icon(
-                            Icons.navigate_next_outlined,
-                            size: 40,
-                          )),
+              itemBuilder: ((context, index) => Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.grey[900]),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListTile(
+                          leading: Icon(Icons.sports_gymnastics_rounded),
+                          title: Text(
+                            value.getWorkoutList()[index].name,
+                            style: TextStyle(
+                                fontSize: 23, fontWeight: FontWeight.bold),
+                          ),
+                          trailing: IconButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return WorkoutPage(
+                                        workoutName:
+                                            value.getWorkoutList()[index].name,
+                                      );
+                                    },
+                                  ),
+                                );
+                              },
+                              icon: const Icon(
+                                Icons.navigate_next_outlined,
+                                size: 40,
+                              )),
+                        ),
+                      ),
                     ),
                   )),
             ),
