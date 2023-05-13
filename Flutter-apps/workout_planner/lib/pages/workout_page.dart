@@ -31,22 +31,26 @@ class _WorkoutPageState extends State<WorkoutPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   TextField(
+                    decoration: InputDecoration(hintText: 'Exercise Name'),
                     controller: _exerciseNameController,
                   ),
                   TextField(
+                    decoration: InputDecoration(hintText: 'weight'),
                     controller: _weightController,
                   ),
                   TextField(
+                    decoration: InputDecoration(hintText: 'number of reps'),
                     controller: _repsController,
                   ),
                   TextField(
+                    decoration: InputDecoration(hintText: 'number of sets'),
                     controller: _setsController,
                   ),
                 ],
               ),
               actions: [
-                MaterialButton(onPressed: save, child: Text("save")),
-                MaterialButton(onPressed: cancel, child: Text("cancel")),
+                MaterialButton(onPressed: save, child: const Text("save")),
+                MaterialButton(onPressed: cancel, child: const Text("cancel")),
               ],
             ));
   }

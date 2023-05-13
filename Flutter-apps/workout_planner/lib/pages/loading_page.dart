@@ -12,20 +12,6 @@ class LoadingPage extends StatelessWidget {
         child: Container(
           height: 200,
           width: 200,
-          child: IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomePage(),
-                ),
-              );
-            },
-            icon: Icon(
-              Icons.sports_gymnastics,
-              size: 100,
-            ),
-          ),
           decoration: BoxDecoration(
             color: Colors.grey[850],
             borderRadius: BorderRadius.circular(40),
@@ -43,6 +29,20 @@ class LoadingPage extends StatelessWidget {
                 spreadRadius: 1,
               ),
             ],
+          ),
+          child: IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.sports_gymnastics,
+              size: 100,
+            ),
           ),
         ),
       ),

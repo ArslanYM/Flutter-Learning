@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import 'package:workout_planner/data/workout_data.dart';
-import 'package:workout_planner/pages/home_page.dart';
 import 'package:workout_planner/pages/loading_page.dart';
 import 'package:hive/hive.dart';
 
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(brightness: Brightness.dark),
         debugShowCheckedModeBanner: false,
-        home: LoadingPage(),
+        home: const LoadingPage(),
       ),
     );
   }
